@@ -9,9 +9,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: Install cpp linters
+      - name: Set cpp linters
         run: |
-          brew install clang-format
           ln -s "$(brew --prefix llvm)/bin/clang-format" "/usr/local/bin/clang-format"
           ln -s "$(brew --prefix llvm)/bin/clang-tidy" "/usr/local/bin/clang-tidy"
       - name: Build from source
