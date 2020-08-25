@@ -19,7 +19,7 @@ jobs:
         run: npm run lint:js
       - name: format c++
         run: npm run format && git diff --exit-code -- src/ test/
-      - name: lint c++
-        run: npm run lint:cpp
+      # - name: lint c++
+      #   run: npm run lint:cpp
       - name: deploy on tag
         run: git describe --tags --exact >/dev/null 2>&1 && npm run pre-build -- -u ${NODE_PRE_GYP_GITHUB_TOKEN} || true
